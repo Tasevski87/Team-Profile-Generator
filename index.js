@@ -135,10 +135,11 @@ const addEngineer = () => {
             name: 'email',
             message: 'Please enter engineers email!',
             validate: emailInput => {
-                if (emailInput) {
-                    return true
-                } else {
-                    console.log('Please enter engineers email!')
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
+                    return (true)
+                }else{
+                console.log("Invalid email address!")
+                return (false)
                 }
             }
         },
@@ -199,10 +200,11 @@ function addIntern() {
             name: 'email',
             message: 'Please enter Intern email!',
             validate: emailInput => {
-                if (emailInput) {
-                    return true
-                } else {
-                    console.log('Please enter Intern email!')
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
+                    return (true)
+                }else{
+                console.log("Invalid email address!")
+                return (false)
                 }
             }
         },
@@ -227,7 +229,7 @@ function addIntern() {
         },
     ])
         .then(internInput => {
-            const intern = new Intern(internInput.name, internInput.Id, internInput.email)
+            const intern = new Intern(internInput.name, internInput.id, internInput.email,internInput.school)
 
             workersArray.push(intern);
             console.log(workersArray);

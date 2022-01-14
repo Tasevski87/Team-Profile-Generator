@@ -29,7 +29,7 @@ function createTeam(team) {
         <div>
             <h2>Name: ${intern.getName()}</h5>
             <h5>Id: ${intern.getId()}</h5>
-            <h5>Email: ${intern.getEmail()}</h5>
+            <h5>Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></P>
             <h5>School: ${intern.getSchool()}</h5>
             <h5>Role: ${intern.getRole()}</h5>
         </div>
