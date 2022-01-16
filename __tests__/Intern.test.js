@@ -1,4 +1,4 @@
-const Intern = require('../lib/Employee')
+const Intern = require('../lib/Intern')
 
 test("Is this an object?", () => {
     const obj = new Intern ()
@@ -13,8 +13,8 @@ test ("Can we get an email?", () => {
 
 test ("Can we get a school?", () => {
     const school = 'test'
-    const intern = new Intern('name', 'id', 'email', school)
-    expect(intern.schooll).toBe(school)
+    const intern = new Intern ('name', 'id', 'email', school)
+    expect(intern.getSchool()).toBe(school)
 })
 
 
