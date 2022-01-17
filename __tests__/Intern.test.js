@@ -1,3 +1,4 @@
+//test for object, email and school 
 const Intern = require('../lib/Intern')
 
 test("Is this an object?", () => {

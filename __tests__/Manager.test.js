@@ -1,3 +1,4 @@
+//test for object, office number and role 
 const Manager = require('../lib/Manager')
 
 test ("Is this an object?", () =>{

@@ -1,4 +1,6 @@
+//function  where we create out put for our team
 function createTeam(team) {
+    //output data for manager
     function createManager(manager) {
         return `
         <div>
@@ -11,7 +13,7 @@ function createTeam(team) {
         </div>
         `
     }
-
+    //output data for engineer
     function createEngineer(engineer) {
         return `
         <div>
@@ -23,7 +25,7 @@ function createTeam(team) {
             </div>
         `
     }
-
+    //output data for intern
     function createIntern(intern) {
         return `
         <div>
@@ -45,7 +47,7 @@ function createTeam(team) {
     return workers.join("")
 
 }
-
+//exporting the data to the html
 module.exports = team => {
     return `<!DOCTYPE html>
     <html lang="en">

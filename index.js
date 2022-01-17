@@ -1,3 +1,4 @@
+// installed packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer')
 const generatePage = require('./src/template')
@@ -10,7 +11,7 @@ const Intern = require('./lib/Intern')
 
 const workersArray = []
 
-
+//created promp for input
 inquirer.prompt([
     {
         type: 'input',
@@ -29,6 +30,7 @@ inquirer.prompt([
         type: 'input',
         name: 'id',
         message: 'Please enter managers ID!',
+        //validating if we enter number 
         validate: idInput => {
             if (!isNaN(idInput)) {
                 return true
@@ -42,6 +44,7 @@ inquirer.prompt([
         type: 'input',
         name: 'email',
         message: 'Please enter managaers email!',
+        //validating if we entered correct email
         validate: emailInput => {
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
                 return (true)
@@ -56,6 +59,7 @@ inquirer.prompt([
         type: 'input',
         name: 'officeNumber',
         message: 'Please enter office number!',
+        //validating if we enter number 
         validate: officeNumberInput => {
             if (!isNaN(officeNumberInput)) {
                 return true
@@ -75,7 +79,7 @@ inquirer.prompt([
         console.log(workersArray);
         addEmployee()
     })
-
+//function for adding another employee
 function addEmployee() {
     inquirer.prompt([
         {
@@ -121,6 +125,7 @@ const addEngineer = () => {
             type: 'input',
             name: 'id',
             message: 'Please enter engineer ID!',
+            //validating if we enter number 
             validate: idInput => {
                 if (isNaN(idInput)) {
                     console.log('Please enter engineers Id!')
@@ -134,6 +139,7 @@ const addEngineer = () => {
             type: 'input',
             name: 'email',
             message: 'Please enter engineers email!',
+             //validating if we entered correct email
             validate: emailInput => {
                 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
                     return (true)
@@ -186,6 +192,7 @@ function addIntern() {
             type: 'input',
             name: 'id',
             message: 'Please enter Intern ID!',
+            //validating if we enter number 
             validate: idInput => {
                 if (isNaN(idInput)) {
                     console.log('Please enter Intern Id!')
@@ -199,6 +206,7 @@ function addIntern() {
             type: 'input',
             name: 'email',
             message: 'Please enter Intern email!',
+             //validating if we entered correct email
             validate: emailInput => {
                 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
                     return (true)
@@ -238,7 +246,7 @@ function addIntern() {
 
         })
 }
-
+// function where we create and wright the html file
 function createTeam() {
     // fs.writefile() with the workersarray data
     fs.writeFile('team.html', generatePage(workersArray), (err) => err ? console.log(err) : console.log('team.html file was created'))

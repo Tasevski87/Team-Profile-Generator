@@ -1,3 +1,4 @@
+//test for an object, id , gitHub and role
 const Engineer = require('../lib/Engineer')
 
 test("Is this an object?", ()=>{

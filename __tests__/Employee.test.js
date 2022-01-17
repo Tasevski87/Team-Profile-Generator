@@ -1,3 +1,4 @@
+// test for and object , name and anme through the function
 const Employee = require('../lib/Employee')
 
 test("Is this an object?", () => {
